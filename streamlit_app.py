@@ -1,5 +1,5 @@
 import streamlit as st
-from stmol import showmol
+from stmol import showmol, render_pdb
 import py3Dmol
 
 st.title('🎈 ESMfold')
