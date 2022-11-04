@@ -5,7 +5,7 @@ from transformers import AutoTokenizer, EsmForProteinFolding
 
 # ESMfold
 tokenizer = AutoTokenizer.from_pretrained("facebook/esmfold_v1")
-#model = EsmForProteinFolding.from_pretrained("facebook/esmfold_v1", low_cpu_mem_usage=True)
+model = EsmForProteinFolding.from_pretrained("facebook/esmfold_v1", low_cpu_mem_usage=True)
 
 #model = model.cuda()
 
