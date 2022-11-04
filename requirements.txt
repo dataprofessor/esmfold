@@ -3,3 +3,4 @@ torch
 py3Dmol
 stmol
 transformers
+accelerate
