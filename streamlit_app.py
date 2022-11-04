@@ -10,4 +10,7 @@ uploaded_file = st.sidebar.file_uploader('Upload PDB file')
 
 #showmol(render_pdb(id = '3EQM'))
 
-showmol(obj_upload(uploaded_file))
+if uploaded_file not None:
+  showmol(obj_upload(uploaded_file))
+else:
+  st.info('Awaiting input ...')
