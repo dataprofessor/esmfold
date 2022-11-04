@@ -7,7 +7,7 @@ from transformers import AutoTokenizer, EsmForProteinFolding
 tokenizer = AutoTokenizer.from_pretrained("facebook/esmfold_v1")
 model = EsmForProteinFolding.from_pretrained("facebook/esmfold_v1", low_cpu_mem_usage=True)
 
-model = model.cuda()
+#model = model.cuda()
 
 # The App
 st.set_page_config(layout = 'wide')
