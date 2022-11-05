@@ -27,7 +27,7 @@ def update(sequence=txt):
     tmp = tempfile.NamedTemporaryFile()
     with open(tmp.name, "w") as f:
         f.write(pdb_string)
-    st.write("File name", tmp.name)
+    #st.write("File name", tmp.name)
     return tmp.name
 
 st.button('Predict', on_click=update)
