@@ -28,7 +28,7 @@ def update(sequence=txt):
     with open(tmp.name, "w") as f:
         f.write(pdb_string)
     #st.write("File name", tmp.name)
-    return tmp.name
+    return showmol(obj_upload(tmp.name).setStyle({'cartoon':{'color':'spectrum'}}) )
 
 st.button('Predict', on_click=update)
 
