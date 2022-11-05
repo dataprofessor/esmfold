@@ -28,7 +28,7 @@ def update(sequence=txt):
     #    f.write(pdb_string)
     #st.write("File name", tmp.name)
     obj = makeobj(pdb_string, molformat='pdb', style='cartoon')
-    return st.write(obj)
+    return st.write(pdb_string)
 
 st.button('Predict', on_click=update)
 
