@@ -24,12 +24,12 @@ def update(sequence=txt):
     name = sequence[:3] + sequence[-3:] 
     pdb_string = response.content.decode('utf-8')
     
-    tmp = tempfile.NamedTemporaryFile()
-    with open(tmp.name, "w") as f:
-        f.write(pdb_string)
+    #tmp = tempfile.NamedTemporaryFile()
+    #with open(tmp.name, "w") as f:
+    #    f.write(pdb_string)
     #st.write("File name", tmp.name)
-    obj = makeobj(tmp.name, 'pdb',style='cartoon')
-    return showmol(obj)
+    obj = makeobj(pdb_string, 'pdb', style='cartoon')
+    return obj
 
 st.button('Predict', on_click=update)
 
