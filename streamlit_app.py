@@ -25,10 +25,10 @@ def update(sequence=txt):
     pdb_string = response.content.decode('utf-8')
     
     tmp = tempfile.NamedTemporaryFile()
-    with open(tmp.name, "w") as f:
-        f.write(pdb_string)
+    #with open(tmp.name, "w") as f:
+    #    f.write(pdb_string)
     #st.write("File name", tmp.name)
-    return showmol(obj_upload(tmp.name).setStyle({'cartoon':{'color':'spectrum'}}) )
+    return showmol(obj_upload(pdb_string).setStyle({'cartoon':{'color':'spectrum'}}) )
 
 st.button('Predict', on_click=update)
 
