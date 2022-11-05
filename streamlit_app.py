@@ -24,8 +24,8 @@ def update(sequence=txt):
         f.write(pdb_string)
     print("File name", tmp.name)
     return tmp.name
-
-st.button('Predict', on_click=update)
+st.write(txt)
+#st.button('Predict', on_click=update)
 
 # The App
 st.set_page_config(layout = 'wide')
