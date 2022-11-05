@@ -4,7 +4,7 @@ import py3Dmol
 import requests
 import tempfile
 
-st.set_page_config(layout = 'wide')
+#st.set_page_config(layout = 'wide')
 st.title('🎈 ESMfold')
 
 
@@ -27,7 +27,7 @@ def update(sequence=txt):
     #with open(tmp.name, "w") as f:
     #    f.write(pdb_string)
     #st.write("File name", tmp.name)
-    obj = makeobj(pdb_string, 'pdb', style='cartoon')
+    obj = makeobj(pdb_string, molformat='pdb', style='cartoon')
     return st.write(obj)
 
 st.button('Predict', on_click=update)
