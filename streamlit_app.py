@@ -10,20 +10,7 @@ DEFAULT_SEQ = "MGSSHHHHHHSSGLVPRGSHMRGPNPTAASLEASAGPFTVRSFTVSRPSGYGAGTVYYPTNAGGT
 
 txt = st.text_area('Input sequence', DEFAULT_SEQ)
 
-def update(sequence=txt):
-    headers = {
-        'Content-Type': 'application/x-www-form-urlencoded',
-    }
 
-    response = requests.post('https://api.esmatlas.com/foldSequence/v1/pdb/', headers=headers, data=txt)
-    name = sequence[:3] + sequence[-3:] 
-    pdb_string = response.content.decode('utf-8')
-    
-    tmp = tempfile.NamedTemporaryFile()
-    with open(tmp.name, "w") as f:
-        f.write(pdb_string)
-    print("File name", tmp.name)
-    return tmp.name
 st.write(txt)
 #st.button('Predict', on_click=update)
 
