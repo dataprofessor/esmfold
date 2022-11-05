@@ -10,7 +10,7 @@ import torch
 tokenizer = AutoTokenizer.from_pretrained("facebook/esmfold_v1")
 model = EsmForProteinFolding.from_pretrained("facebook/esmfold_v1", low_cpu_mem_usage=True)
 
-test_protein = "MGAGASAEEKHSRELEKKLKEDAEKDARTV"
+test_protein = "MGA"
 tokenized_input = tokenizer([test_protein], return_tensors="pt", add_special_tokens=False)['input_ids']
 
 with torch.no_grad():
