@@ -1,8 +1,27 @@
 import streamlit as st
 from stmol import showmol, render_pdb, obj_upload
 import py3Dmol
+import requests
+import tempfile
 
 # ESMfold
+
+DEFAULT_SEQ = "MGSSHHHHHHSSGLVPRGSHMRGPNPTAASLEASAGPFTVRSFTVSRPSGYGAGTVYYPTNAGGTVGAIAIVPGYTARQSSIKWWGPRLASHGFVVITIDTNSTLDQPSSRSSQQMAALRQVASLNGTSSSPIYGKVDTARMGVMGWSMGGGGSLISAANNPSLKAAAPQAPWDSSTNFSSVTVPTLIFACENDSIAPVNSSALPIYDSMSRNAKQFLEINGGSHSCANSGNSNQALIGKKGVAWMKRFMDNDTRYSTFACENPNSTRVSDFRTANCSLEDPAANKARKEAELAAATAEQ"
+
+def update(sequence=DEFAULT_SEQ):
+    headers = {
+        'Content-Type': 'application/x-www-form-urlencoded',
+    }
+
+    response = requests.post('https://api.esmatlas.com/foldSequence/v1/pdb/', headers=headers, data=sequence)
+    name = sequence[:3] + sequence[-3:] 
+    pdb_string = response.content.decode('utf-8')
+    
+    tmp = tempfile.NamedTemporaryFile()
+    with open(tmp.name, "w") as f:
+        f.write(pdb_string)
+    print("File name", tmp.name)
+    return molecule(tmp.name)
 
 # The App
 st.set_page_config(layout = 'wide')
