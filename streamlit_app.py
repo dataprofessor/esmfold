@@ -23,7 +23,7 @@ def update(sequence=txt):
     with open(tmp.name, "w") as f:
         f.write(pdb_string)
     print("File name", tmp.name)
-    return molecule(tmp.name)
+    return tmp.name
 
 st.button('Predict', on_click=update)
 
