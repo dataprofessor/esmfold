@@ -5,6 +5,7 @@ import requests
 import tempfile
 
 st.set_page_config(layout = 'wide')
+st.title('🎈 ESMfold')
 
 
 # ESMfold
@@ -14,11 +15,24 @@ DEFAULT_SEQ = "MGSSHHHHHHSSGLVPRGSHMRGPNPTAASLEASAGPFTVRSFTVSRPSGYGAGTVYYPTNAGGT
 txt = st.text_area('Input sequence', DEFAULT_SEQ)
 st.write(txt)
 
-#st.button('Predict', on_click=update)
+def update(sequence=txt):
+    headers = {
+        'Content-Type': 'application/x-www-form-urlencoded',
+    }
 
-# The App
+    response = requests.post('https://api.esmatlas.com/foldSequence/v1/pdb/', headers=headers, data=sequence)
+    name = sequence[:3] + sequence[-3:] 
+    pdb_string = response.content.decode('utf-8')
+    
+    tmp = tempfile.NamedTemporaryFile()
+    with open(tmp.name, "w") as f:
+        f.write(pdb_string)
+    print("File name", tmp.name)
+    return tmp.name
 
-st.title('🎈 ESMfold')
+st.button('Predict', on_click=update)
+
+
 
 #uploaded_file = st.sidebar.file_uploader('Upload PDB file')
 
