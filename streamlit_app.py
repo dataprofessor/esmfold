@@ -13,7 +13,6 @@ st.title('🎈 ESMfold')
 DEFAULT_SEQ = "MGSSHHHHHHSSGLVPRGSHMRGPNPTAASLEASAGPFTVRSFTVSRPSGYGAGTVYYPTNAGGTVGAIAIVPGYTARQSSIKWWGPRLASHGFVVITIDTNSTLDQPSSRSSQQMAALRQVASLNGTSSSPIYGKVDTARMGVMGWSMGGGGSLISAANNPSLKAAAPQAPWDSSTNFSSVTVPTLIFACENDSIAPVNSSALPIYDSMSRNAKQFLEINGGSHSCANSGNSNQALIGKKGVAWMKRFMDNDTRYSTFACENPNSTRVSDFRTANCSLEDPAANKARKEAELAAATAEQ"
 
 txt = st.text_area('Input sequence', DEFAULT_SEQ)
-st.write(txt)
 
 def update(sequence=txt):
     headers = {
@@ -29,7 +28,7 @@ def update(sequence=txt):
     #    f.write(pdb_string)
     #st.write("File name", tmp.name)
     obj = makeobj(pdb_string, 'pdb', style='cartoon')
-    return obj
+    return st.write(obj)
 
 st.button('Predict', on_click=update)
 
