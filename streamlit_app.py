@@ -8,7 +8,7 @@ import tempfile
 
 #st.set_page_config(layout = 'wide')
 st.sidebar.title('🎈 ESMFold')
-st.sidebar.write('*ESMFold* is an end-to-end single sequence protein structure predictor based on the ESM-2 language model.')
+st.sidebar.write('[*ESMFold*](https://esmatlas.com/about) is an end-to-end single sequence protein structure predictor based on the ESM-2 language model. More info [here](https://www.biorxiv.org/content/10.1101/2022.07.20.500902v2)')
 
 # stmol
 def render_mol(pdb):
