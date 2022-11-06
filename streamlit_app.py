@@ -34,8 +34,8 @@ def update(sequence=txt):
     name = sequence[:3] + sequence[-3:] 
     pdb_string = response.content.decode('utf-8')
     
-    struct = bsio.load_structure(pdb_string, extra_fields=["b_factor"])
-    st.write(struct.b_factor.mean())
+    #struct = bsio.load_structure(pdb_string, extra_fields=["b_factor"])
+    #st.write(struct.b_factor.mean())
     
     return render_mol(pdb_string)
 
