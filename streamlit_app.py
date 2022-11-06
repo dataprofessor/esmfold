@@ -4,6 +4,7 @@ import streamlit as st
 from stmol import showmol
 import py3Dmol
 import requests
+import tempfile
 import biotite.structure.io as bsio
 
 #st.set_page_config(layout = 'wide')
@@ -34,8 +35,12 @@ def update(sequence=txt):
     name = sequence[:3] + sequence[-3:] 
     pdb_string = response.content.decode('utf-8')
     
-    #struct = bsio.load_structure(pdb_string, extra_fields=["b_factor"])
-    #st.write(struct.b_factor.mean())
+    tmp = tempfile.NamedTemporaryFile()
+    with open(tmp.name, "w") as f:
+        f.write(pdb_string)
+        
+    struct = bsio.load_structure(tmp, extra_fields=["b_factor"])
+    st.write(struct.b_factor.mean())
     
     return render_mol(pdb_string)
 
