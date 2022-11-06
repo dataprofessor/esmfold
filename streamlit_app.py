@@ -16,7 +16,7 @@ def render_mol(pdb):
     pdbview.setStyle({'cartoon':{'color':'spectrum'}})
     pdbview.setBackgroundColor('white')#('0xeeeeee')
     pdbview.zoomTo()
-    viewer.zoom(2, 800)
+    pdbview.zoom(2, 800)
     showmol(pdbview, height = 500,width=800)
 
 # ESMfold
