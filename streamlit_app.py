@@ -34,13 +34,5 @@ def update(sequence=txt):
     pdb_string = response.content.decode('utf-8')
     return c.write(render_mol(pdb_string))
 
-st.button('Predict', on_click=update)
+st.sidebar.button('Predict', on_click=update)
 
-#uploaded_file = st.sidebar.file_uploader('Upload PDB file')
-
-##showmol(render_pdb(id = '3EQM'))
-
-#if uploaded_file is not None:
-#  showmol(obj_upload(uploaded_file).setStyle({'cartoon':{'color':'spectrum'}}) )
-#else:
-#  st.info('Awaiting input ...')
