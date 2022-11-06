@@ -40,7 +40,7 @@ def update(sequence=txt):
         
     struct = bsio.load_structure('predicted.pdb', extra_fields=["b_factor"])
     b_value = round(struct.b_factor.mean(), 4)
-    st.write(b_value)
+    st.write('B-factor:', b_value)
     
     return render_mol(pdb_string)
 
