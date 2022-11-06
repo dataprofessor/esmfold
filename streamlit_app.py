@@ -10,7 +10,7 @@ import tempfile
 st.sidebar.title('🎈 ESMFold')
 
 with st.sidebar.expander('About App'):
-    st..sidebar.write('*ESMFold* is an end-to-end single sequence protein structure predictor based on the ESM-2 language model.')
+    st.sidebar.write('*ESMFold* is an end-to-end single sequence protein structure predictor based on the ESM-2 language model.')
 
 # stmol
 def render_mol(pdb):
