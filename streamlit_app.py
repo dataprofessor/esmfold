@@ -18,6 +18,7 @@ def render_mol(pdb):
     pdbview.setBackgroundColor('white')#('0xeeeeee')
     pdbview.zoomTo()
     pdbview.zoom(2, 800)
+    pdbview.spin(True)
     showmol(pdbview, height = 500,width=800)
 
 # Protein sequence input
