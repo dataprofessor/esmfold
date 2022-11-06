@@ -1,5 +1,5 @@
 import streamlit as st
-from stmol import showmol, render_pdb, obj_upload
+from stmol import showmol
 import py3Dmol
 import requests
 import tempfile
@@ -29,11 +29,9 @@ def update(sequence=txt):
     pdb_string = response.content.decode('utf-8')
     #return render_mol(pdb_string)
 
-
 st.button('Predict', on_click=update)
 
-if pdb_string is not None:
-    render_mol(pdb_string)
+st.write(pdb_string)
 
 #uploaded_file = st.sidebar.file_uploader('Upload PDB file')
 
