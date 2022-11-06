@@ -39,7 +39,7 @@ def update(sequence=txt):
     with open(tmp.name, "w") as f:
         f.write(pdb_string)
         
-    struct = bsio.load_structure(tmp, extra_fields=["b_factor"])
+    struct = bsio.load_structure(tmp.name, extra_fields=["b_factor"])
     st.write(struct.b_factor.mean())
     
     return render_mol(pdb_string)
