@@ -4,7 +4,7 @@ import streamlit as st
 from stmol import showmol
 import py3Dmol
 import requests
-import tempfile
+import biotite.structure.io as bsio
 
 #st.set_page_config(layout = 'wide')
 st.sidebar.title('🎈 ESMFold')
@@ -33,7 +33,10 @@ def update(sequence=txt):
     response = requests.post('https://api.esmatlas.com/foldSequence/v1/pdb/', headers=headers, data=sequence)
     name = sequence[:3] + sequence[-3:] 
     pdb_string = response.content.decode('utf-8')
-    st.write(pdb_string)
+    
+    struct = bsio.load_structure(pdb_string, extra_fields=["b_factor"])
+    st.write(struct.b_factor.mean())
+    
     return render_mol(pdb_string)
 
 st.sidebar.button('Predict', on_click=update)
