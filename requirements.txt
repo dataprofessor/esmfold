@@ -1,6 +1,4 @@
 streamlit
-torch
 py3Dmol
 stmol
-transformers
-accelerate
+biotite
