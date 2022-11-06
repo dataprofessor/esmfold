@@ -7,6 +7,15 @@ import tempfile
 #st.set_page_config(layout = 'wide')
 st.title('🎈 ESMfold')
 
+# stmol
+
+def render_mol(pdb):
+    pdbview = py3Dmol.view(width=400,height=400)
+    pdbview.addModel(pdb,'pdb')
+    pdbview.setStyle({'cartoon':{}})
+    pdbview.setBackgroundColor('white')#('0xeeeeee')
+    pdbview.zoomTo()
+    showmol(pdbview, height = 500,width=800)
 
 # ESMfold
 
@@ -28,7 +37,7 @@ def update(sequence=txt):
     #    f.write(pdb_string)
     #st.write("File name", tmp.name)
     #obj = makeobj(pdb_string, molformat='pdb', style='cartoon')
-    return st.write(pdb_string)
+    return render_mol(pdb_string)
 
 st.button('Predict', on_click=update)
 
