@@ -33,6 +33,7 @@ def update(sequence=txt):
     response = requests.post('https://api.esmatlas.com/foldSequence/v1/pdb/', headers=headers, data=sequence)
     name = sequence[:3] + sequence[-3:] 
     pdb_string = response.content.decode('utf-8')
+    st.write(pdb_string)
     return render_mol(pdb_string)
 
 st.sidebar.button('Predict', on_click=update)
