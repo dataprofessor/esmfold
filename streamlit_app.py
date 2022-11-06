@@ -9,7 +9,7 @@ st.title('🎈 ESMfold')
 
 # stmol
 def render_mol(pdb):
-    pdbview = py3Dmol.view(width=400,height=400)
+    pdbview = py3Dmol.view()
     pdbview.addModel(pdb,'pdb')
     pdbview.setStyle({'cartoon':{'color':'spectrum'}})
     pdbview.setBackgroundColor('white')#('0xeeeeee')
