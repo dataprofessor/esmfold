@@ -40,9 +40,10 @@ def update(sequence=txt):
         
     struct = bsio.load_structure('predicted.pdb', extra_fields=["b_factor"])
     b_value = round(struct.b_factor.mean(), 4)
-    st.write('B-factor:', b_value)
     
-    return render_mol(pdb_string)
+    render_mol(pdb_string)
+    st.write('B-factor:', b_value)
+
 
 st.sidebar.button('Predict', on_click=update)
 
