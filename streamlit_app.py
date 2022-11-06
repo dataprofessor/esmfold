@@ -35,11 +35,10 @@ def update(sequence=txt):
     name = sequence[:3] + sequence[-3:] 
     pdb_string = response.content.decode('utf-8')
     
-    tmp = tempfile.NamedTemporaryFile()
-    with open(tmp.name, "w") as f:
+    with open('predicted.pdb', 'w') as f:
         f.write(pdb_string)
         
-    struct = bsio.load_structure(tmp.name, extra_fields=["b_factor"])
+    struct = bsio.load_structure('predicted.pdb', extra_fields=["b_factor"])
     st.write(struct.b_factor.mean())
     
     return render_mol(pdb_string)
