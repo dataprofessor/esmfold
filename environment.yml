@@ -1,4 +1,4 @@
-channles:
+channels:
   - conda-forge
 dependencies:
   - biotite
