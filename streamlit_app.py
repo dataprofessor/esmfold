@@ -32,7 +32,8 @@ def update(sequence=txt):
 
 st.button('Predict', on_click=update)
 
-render_mol(pdb_string)
+if pdb_string is not None:
+    render_mol(pdb_string)
 
 #uploaded_file = st.sidebar.file_uploader('Upload PDB file')
 
