@@ -7,7 +7,10 @@ import requests
 import tempfile
 
 #st.set_page_config(layout = 'wide')
-st.sidebar.title('🎈 ESMfold')
+st.sidebar.title('🎈 ESMFold')
+
+with st.expander('About App')
+    st.write('ESMFold is an end-to-end single sequence protein structure predictor based on the ESM-2 language model.')
 
 # stmol
 def render_mol(pdb):
