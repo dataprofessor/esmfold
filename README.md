@@ -8,5 +8,6 @@
 
 ## Further Reading
 For more information, read the following articles:
+- [ESM Metagenomic Atlas: The first view of the ‘dark matter’ of the protein universe](https://ai.facebook.com/blog/protein-folding-esmfold-metagenomics/)
 - [Evolutionary-scale prediction of atomic level protein structure with a language model](https://www.biorxiv.org/content/10.1101/2022.07.20.500902v2)
 - [AlphaFold’s new rival? Meta AI predicts shape of 600 million proteins](https://www.nature.com/articles/d41586-022-03539-1)
