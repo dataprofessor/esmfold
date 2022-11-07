@@ -45,7 +45,7 @@ def update(sequence=txt):
 
     st.download_button(
         label="Download PDB",
-        data=csv,
+        data=pdb_string,
         file_name='predicted.pdb',
         mime='text/plain',
     )
