@@ -43,8 +43,16 @@ def update(sequence=txt):
     render_mol(pdb_string)
     st.info(f'B-factor: {b_value}')
 
+    st.download_button(
+        label="Download PDB",
+        data=csv,
+        file_name='predicted.pdb',
+        mime='text/plain',
+    )
 
 predict = st.sidebar.button('Predict', on_click=update)
+
+
 
 if not predict:
     st.warning('👈 Enter protein sequence data!')
