@@ -45,5 +45,7 @@ def update(sequence=txt):
     st.write('B-factor:', b_value)
 
 
-st.sidebar.button('Predict', on_click=update)
+predict = st.sidebar.button('Predict', on_click=update)
 
+if not predict:
+    st.write('Enter protein sequence data!')
