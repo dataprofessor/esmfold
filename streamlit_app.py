@@ -4,7 +4,6 @@ import streamlit as st
 from stmol import showmol
 import py3Dmol
 import requests
-import tempfile
 import biotite.structure.io as bsio
 
 #st.set_page_config(layout = 'wide')
