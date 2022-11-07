@@ -48,4 +48,4 @@ def update(sequence=txt):
 predict = st.sidebar.button('Predict', on_click=update)
 
 if not predict:
-    st.write('Enter protein sequence data!')
+    st.warning('👈 Enter protein sequence data!')
