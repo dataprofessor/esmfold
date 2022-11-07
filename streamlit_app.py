@@ -49,25 +49,6 @@ def update(sequence=txt):
         file_name='predicted.pdb',
         mime='text/plain',
     )
-    
-    
-    stack = strucio.load_structure('predicted.pdb')
-    # We consider only CA atoms
-    stack = stack[:, stack.atom_name == "CA"]
-    # Superimposing all models of the structure onto the first model
-    stack, transformation_tuple = struc.superimpose(stack[0], stack)
-    print("RMSD for each model to first model:")
-    print(struc.rmsd(stack[0], stack))
-    # Calculate the RMSF relative to the average of all models
-    rmsf = struc.rmsf(struc.average(stack), stack)
-    # Plotting stuff
-    fig = plt.figure() 
-    plt.plot(np.arange(1,21), rmsf)
-    plt.xlim(0,21)
-    plt.xticks(np.arange(1,21))
-    plt.xlabel("Residue")
-    plt.ylabel("RMSF")
-    st.pyplot(fig)
 
 predict = st.sidebar.button('Predict', on_click=update)
 
