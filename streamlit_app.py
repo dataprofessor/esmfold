@@ -42,7 +42,7 @@ def update(sequence=txt):
     b_value = round(struct.b_factor.mean(), 4)
     
     render_mol(pdb_string)
-    st.write('B-factor:', b_value)
+    st.info(f'B-factor: {b_value}')
 
 
 predict = st.sidebar.button('Predict', on_click=update)
