@@ -1,4 +1,4 @@
-# 📦 EMSFold
+# 🎈 EMSFold
 
 [*ESMFold*](https://esmatlas.com/about) is an end-to-end single sequence protein structure predictor based on the ESM-2 language model.
 
@@ -8,5 +8,5 @@
 
 ## Further Reading
 For more information, read the following articles:
-- [research article](https://www.biorxiv.org/content/10.1101/2022.07.20.500902v2)
-- [news article](https://www.nature.com/articles/d41586-022-03539-1) published in *Nature*.
+- [Evolutionary-scale prediction of atomic level protein structure with a language model](https://www.biorxiv.org/content/10.1101/2022.07.20.500902v2)
+- [AlphaFold’s new rival? Meta AI predicts shape of 600 million proteins](https://www.nature.com/articles/d41586-022-03539-1)
