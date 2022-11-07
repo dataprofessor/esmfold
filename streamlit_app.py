@@ -40,8 +40,11 @@ def update(sequence=txt):
     struct = bsio.load_structure('predicted.pdb', extra_fields=["b_factor"])
     b_value = round(struct.b_factor.mean(), 4)
     
+    # Display protein structure
     render_mol(pdb_string)
-    st.info(f'B-factor: {b_value}')
+    
+    # plDDT value is stored in B-factor fields
+    st.info(f'plDDT: {b_value}')
 
     st.download_button(
         label="Download PDB",
