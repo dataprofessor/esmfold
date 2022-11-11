@@ -1,5 +1,3 @@
-# Credit: This app is inspired by https://huggingface.co/spaces/osanseviero/esmfold
-
 import streamlit as st
 from stmol import showmol
 import py3Dmol
@@ -61,3 +59,5 @@ predict = st.sidebar.button('Predict', on_click=update)
 
 if not predict:
     st.warning('👈 Enter protein sequence data!')
+    
+# Credit: This app is inspired by https://huggingface.co/spaces/osanseviero/esmfold
