@@ -6,6 +6,10 @@
 
 [![Streamlit App](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white)](https://esmfold.streamlit.app/)
 
+## Credit
+
+This app was inspired by [osanseviero's app](https://huggingface.co/spaces/osanseviero/esmfold).
+
 ## Further Reading
 For more information, read the following articles:
 - [ESM Metagenomic Atlas: The first view of the ‘dark matter’ of the protein universe](https://ai.facebook.com/blog/protein-folding-esmfold-metagenomics/)
