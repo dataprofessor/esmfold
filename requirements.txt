@@ -1,4 +1,4 @@
 streamlit
-py3Dmol
 stmol
+py3Dmol
 biotite
