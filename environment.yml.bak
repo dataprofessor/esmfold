@@ -1,5 +1,0 @@
-name: esmfold
-channels:
-- conda-forge
-dependencies:
-- biotite
