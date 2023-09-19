@@ -2,6 +2,5 @@ streamlit
 stmol==0.0.9
 py3Dmol
 biotite
-setuptools
-pip
+ipywidgets
 ipython_genutils
